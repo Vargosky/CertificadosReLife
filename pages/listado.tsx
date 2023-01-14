@@ -61,6 +61,7 @@ const Home: NextPage = () => {
                     onClick={() => router.push(`/listing/${listing.metadata.id}`)}
                   >
                     <MediaRenderer
+                      key={listing.metadata.id}
                       src={listing.metadata.image}
                       style={{
                         borderRadius: 16,

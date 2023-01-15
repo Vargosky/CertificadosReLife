@@ -59,6 +59,7 @@ const Home: NextPage = () => {
                   <div
                     className={styles.listingShortView}
                     onClick={() => router.push(`/listing/${listing.metadata.id}`)}
+                    key={listing.metadata.id}
                   >
                     <MediaRenderer
                       key={listing.metadata.id}
@@ -71,7 +72,8 @@ const Home: NextPage = () => {
                       }}
                     />
                     <h2 className={styles.nameContainer}>
-                      <Link href={`/listing/${listing.metadata.id}`}>
+                      <Link href={`/listing/${listing.metadata.id}`}
+                      key={listing.metadata.id}>
                         <a className={styles.name}>{listing.metadata.name}</a>
                       </Link>
                     </h2>

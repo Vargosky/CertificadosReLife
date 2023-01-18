@@ -2,7 +2,7 @@ import styles from "../../styles/Thirdweb.module.css";
 import React from "react";
 
 export default function ThirdwebGuideFooter() {
-  const url = "https://github.com/thirdweb-example/marketplace-next-ts";
+  const url = "https://github.com/Vargosky/CertificadosReLife";
   return (
     <>
       <div
@@ -14,7 +14,7 @@ export default function ThirdwebGuideFooter() {
           width: 150,
           border: "1px solid #eaeaea",
           transform: "rotate(45deg)",
-          backgroundColor: " #262935",
+          backgroundColor: " #009933",
           cursor: "pointer",
         }}
         role="button"

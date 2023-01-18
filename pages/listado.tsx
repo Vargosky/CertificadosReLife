@@ -25,9 +25,9 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={styles.container}>
         {/* Top Section */}
-        <h1 className={styles.h1 + styles.titulo}>Mis Certificados</h1>
-        <p className={styles.explain}>
-          Podemos ver en este lugar los certificados canjeados.{" "}
+        <h1 className="text-5xl m-10 font-bold">Mis Certificados</h1>
+        <p className="w-2/3 p-10 text-2xl">
+          En este lugar puedes ver los certificados de reciclaje que tu haz comprado.
           <b>
             {" "}
             <a
@@ -54,7 +54,9 @@ const Home: NextPage = () => {
               <div>Loading listings...</div>
             ) : (
               // Otherwise, show the listings
+
               <div className={styles.listingGrid}>
+                {(listings?.length == 0) ? <div className="w-full justify-center items-center">Aún no tienes Certificados, consigue el tuyo <Link href={'/market'}>ACA</Link></div>: <></>}
                 {listings?.map((listing) => (
                   <div
                     className={styles.listingShortView}
@@ -73,7 +75,7 @@ const Home: NextPage = () => {
                     />
                     <h2 className={styles.nameContainer}>
                       <Link href={`/listing/${listing.metadata.id}`}
-                      key={listing.metadata.id}>
+                      key={listing.metadata.id} >
                         <a className={styles.name}>{listing.metadata.name}</a>
                       </Link>
                     </h2>

@@ -2,18 +2,13 @@ import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 
 import Link from "next/link";
-import {
-  MediaRenderer,
-  useActiveListings,
-  useContract,
-} from "@thirdweb-dev/react";
+
 import { useRouter } from "next/router";
-import { marketplaceContractAddress, collectionContractAddress } from "../addresses";
+
 
 const Home: NextPage = () => {
   const router = useRouter();
-  const { contract: marketplace } = useContract(marketplaceContractAddress, "marketplace");
-  const { data: listings, isLoading: loadingListings } = useActiveListings(marketplace);
+
 
   
 
@@ -22,20 +17,10 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={styles.container}>
         {/* Top Section */}
-        <h1 className={styles.titulo}>Re-Life</h1>
-        <p className={styles.explain}>
-          Creando el un mundo más limpio{" "}
-          <b>
-            {" "}
-            <a
-              href="https://thirdweb.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.purple}
-            >              
-            </a>
-          </b>{" "}
-          Consigue tus certificados, cómpralos con el token Re-life
+        
+        <h1 className=" w-2/3  pt-20 items-center text-8xl"> Atrévete a cambiar tu mundo</h1>
+        <p className="justify-center items-center text-3xl w-2/3 pt-10">
+          Consigue monedas reciclando, canjea tus certificados de reducción de CO2 equivalente, hazte cargo de tu propia contaminación. Puedes ser Carbono Neutral. 
         </p>
 
         <hr className={styles.divider} />
@@ -45,44 +30,12 @@ const Home: NextPage = () => {
         </div>
 
         <div className="main">
-          {
-            // If the listings are loading, show a loading message
-            loadingListings ? (
-              <div>Loading listings...</div>
-            ) : (
-              // Otherwise, show the listings
-              <div className={styles.listingGrid}>
-                {listings?.map((listing) => (
-                  <div
-                    key={listing.id}
-                    className={styles.listingShortView}
-                    onClick={() => router.push(`/listing/${listing.id}`)}
-                  >
-                    <MediaRenderer
-                      src={listing.asset.image}
-                      style={{
-                        borderRadius: 16,
-                        // Fit the image to the container
-                        width: "100%",
-                        height: "100%",
-                      }}
-                    />
-                    <h2 className={styles.nameContainer}>
-                      <Link href={`/listing/${listing.id}`}>
-                        <a className={styles.name}>{listing.asset.name}</a>
-                      </Link>
-                    </h2>
-
-                    <p>
-                      <b>{listing.buyoutCurrencyValuePerToken.displayValue}</b>{" "}
-                      {listing.buyoutCurrencyValuePerToken.symbol}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )
-          }
+              <h1 className="text-4xl font-bold mb-10">¿Que necesitas?</h1>
         </div>
+        <div className="text-xl">1. Lo primero que necesitas es una billetera inteligente, como Metamask</div>
+
+        
+
       </div>
     </>
   );

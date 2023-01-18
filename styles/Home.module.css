@@ -96,7 +96,7 @@
 }
 
 .header {
-  background-color: #262936;
+  background-color: #009933;
   position: fixed;
   top: 0;
   left: 0;
@@ -126,6 +126,7 @@
   justify-content: center;
   flex-direction: row;
   margin-right: 5%;
+  
 }
 
 .secondaryButton {
@@ -156,15 +157,15 @@
   min-width: 3rem;
   font-size: 1rem;
   background: #e5e5ea;
-  background-image: linear-gradient(to left, #cc25b3 0%, #418dff 101.52%);
-  color: #fff;
+
+  color: black;
   width: 180px;
   text-align: center;
   border-radius: 9999px;
 }
 
 .mainButton:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .ourCollection {

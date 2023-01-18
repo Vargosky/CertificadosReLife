@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import Head from "next/head";
 import ThirdwebGuideFooter from "../components/ThirdwebGuideFooter";
 import Header from "../components/Header";
+import Menu from "../components/Menu";
 
 // This is the chainId your dApp will work on.
 const activeChainId = ChainId.Mumbai;
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <Header />
+      <Menu/>
       <Component {...pageProps} />
       <ThirdwebGuideFooter />
     </ThirdwebProvider>

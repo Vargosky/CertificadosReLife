@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={styles.container}>
         {/* Top Section */}
-        <h1 className={styles.titulo}>Re-Life</h1>
+        <h1 className={styles.titulo}> Marketplace Re-Life</h1>
         <p className={styles.explain}>
           Creando el un mundo más limpio{" "}
           <b>

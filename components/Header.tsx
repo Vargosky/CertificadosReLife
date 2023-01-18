@@ -2,7 +2,7 @@ import { useAddress, useMetamask, useDisconnect } from "@thirdweb-dev/react";
 import Link from "next/link";
 import React from "react";
 import styles from "../styles/Home.module.css";
-
+import Menu from "../components/Menu";
 export default function Header() {
   // Helpful thirdweb hooks to connect and manage the wallet from metamask.
   const address = useAddress();
@@ -10,59 +10,25 @@ export default function Header() {
   const disconnectWallet = useDisconnect();
 
   return (
+    <div className="block">
+
     <div className={styles.header}>
       <div className={styles.left}>
         <div className={styles.right}>
-          <Link href="/" passHref role="button">
-            <img
-              className="homeBtn"
-              src={`/logo.png`}
-              alt="Thirdweb Logo"
-              width={135}
-              style={{ cursor: "pointer" }}
-            />
+          <Link href="/" passHref role="button" className="cursor-pointer">
+
+              <div className="text-4xl text-white font-bold cursor-pointer">ReLife</div>
+
           </Link>
           
-          <Link href="/listado" passHref role="link">
-            <img
-              src={`/misCert.png`}
-              alt="Thirdweb Logo"
-              width={135}
-              style={{ cursor: "pointer" }}
-              
-            />
-          </Link>
+          
 
-          <Link href="https://docs.google.com/forms/d/19uZ1oxSGO1yD-opYiZuYQcBDiT3nDQAIDaIKK9EGmSg/edit" passHref role="link" target="_blank">
-            <img
-              src={`/canjear.png`}
-              alt="Thirdweb Logo"
-              width={135}
-              style={{ cursor: "pointer" }}
-            />
-          </Link>
-
-          <Link href="/" passHref role="link" target="_blank">
-            <img
-              src={`/canjeaCertificados.png`}
-              alt="Thirdweb Logo"
-              width={135}
-              style={{ cursor: "pointer" }}
-            />
-          </Link>
-          <Link href="https://app.uniswap.org/#/swap" passHref role="link" target="_blank">
-            <img
-              src={`/intercambia.png`}
-              alt="Thirdweb Logo"
-              width={135}
-              style={{ cursor: "pointer" }}
-            />
-          </Link>
-
+          
 
         </div>
 
       </div>
+   
       <div className={styles.right}>
         {address ? (
           <>
@@ -84,6 +50,9 @@ export default function Header() {
           </a>
         )}
       </div>
+      
+    </div>
+
     </div>
   );
 }
